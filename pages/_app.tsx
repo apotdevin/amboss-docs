@@ -2,12 +2,30 @@ import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../src/styles/GlobalStyle';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 import Head from 'next/head';
+import { Header } from '../src/components/layouts/Header';
+import { Footer } from '../src/components/layouts/Footer';
+
+const S = {
+  wrapper: styled.div`
+    min-height: 100vh;
+    position: relative;
+  `,
+  body: styled.div`
+    padding-bottom: 120px;
+  `,
+};
 
 const Content: React.FC = ({ children }) => {
   return (
     <ThemeProvider theme={{ mode: 'light' }}>
       <GlobalStyles />
-      {children}
+      <S.wrapper>
+        <S.body>
+          <Header />
+          {children}
+        </S.body>
+        <Footer />
+      </S.wrapper>
     </ThemeProvider>
   );
 };
