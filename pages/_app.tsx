@@ -4,6 +4,7 @@ import { AppProps } from 'next/dist/next-server/lib/router/router';
 import Head from 'next/head';
 import { Header } from '../src/components/layouts/Header';
 import { Footer } from '../src/components/layouts/Footer';
+import { constantDimensions } from '../src/styles/Themes';
 
 const S = {
   wrapper: styled.div`
@@ -11,7 +12,7 @@ const S = {
     position: relative;
   `,
   body: styled.div`
-    padding-bottom: 120px;
+    padding-bottom: ${constantDimensions.footerHeight};
   `,
 };
 
