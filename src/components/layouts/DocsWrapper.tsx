@@ -1,9 +1,10 @@
-import { FC, useState } from 'react';
+import { FC, Fragment, useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight } from 'react-feather';
 import { getOrder } from '../../utils/order';
 import sortBy from 'lodash.sortby';
+import { mediaWidths } from '../../styles/Themes';
 
 const S = {
   wrapper: styled.div`
@@ -14,10 +15,18 @@ const S = {
   `,
   body: styled.div`
     width: 100%;
+
+    @media (${mediaWidths.mobile}) {
+      padding: 0 16px 0;
+    }
   `,
   sidebar: styled.div`
     height: 100%;
     width: 300px;
+
+    @media (${mediaWidths.mobile}) {
+      display: none;
+    }
   `,
   content: styled.div`
     height: 100%;
@@ -72,7 +81,7 @@ const MenuRow: FC<{
       </S.title>
       {open &&
         entries.map(e => (
-          <S.sub>
+          <S.sub key={e.title}>
             <Link
               as={`/docs/${e.filePath.replace(/\.mdx?$/, '')}`}
               href={`/docs/[slug]`}
@@ -106,7 +115,13 @@ export const DocsWrapper: FC<MenuProps> = ({ children, docs, openFile }) => {
       <S.sidebar>
         <S.content>
           {sorted.map(g => (
-            <MenuRow openFile={openFile} title={g.group} entries={g.entries} />
+            <Fragment key={g.group}>
+              <MenuRow
+                openFile={openFile}
+                title={g.group}
+                entries={g.entries}
+              />
+            </Fragment>
           ))}
         </S.content>
       </S.sidebar>

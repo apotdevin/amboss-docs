@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Layout from '../components/Layout';
 import { AmbossCharacter } from '../src/components/logo/AmbossCharacter';
 
 const S = {
@@ -14,11 +13,9 @@ const S = {
 
 const Index = () => {
   return (
-    <Layout>
-      <S.character>
-        <AmbossCharacter />
-      </S.character>
-    </Layout>
+    <S.character>
+      <AmbossCharacter />
+    </S.character>
   );
 };
 

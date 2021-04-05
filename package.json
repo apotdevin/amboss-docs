@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "dev:watch": "next-remote-watch ./posts",
+    "dev:watch": "next-remote-watch ./docs",
     "build": "next build",
     "start": "next start",
     "upgrade-latest": "npx npm-check -u"
@@ -20,6 +20,7 @@
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
     "react-spinners": "^0.10.6",
+    "react-syntax-highlighter": "^15.4.3",
     "styled-components": "^5.2.3"
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "@types/lodash.groupby": "^4.6.6",
     "@types/lodash.sortby": "^4.7.6",
     "@types/react": "^17.0.3",
+    "@types/react-syntax-highlighter": "^13.5.0",
     "@types/styled-components": "^5.1.9",
     "babel-plugin-styled-components": "^1.12.0",
     "husky": "^6.0.0",
