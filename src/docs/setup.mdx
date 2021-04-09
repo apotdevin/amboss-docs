@@ -1,0 +1,33 @@
+---
+title: Initial Setup
+group: Install
+---
+
+# Initial Amboss Setup
+Now that Amboss is installed, here are the steps to get started managing the connected nodes. Amboss uses email notifications for events, which is completely customizable.
+ 
+First, enter an email address that you’d like to use for notifications. Choose a secure password that will safeguard your funds such as one generated from a password manager e.g. Bitwarden, KeePass.
+ 
+## Add Your First Node
+Amboss is built to operate with several nodes. To add your first node, enter the details needed to communicate with it:
+In the Socket field, use the following format for a node running on Tor:
+https://<node pubkey>@<tor address from Mobile Zeus Android connect>:8080
+ 
+### Add a Raspiblitz Node
+To get the Tor address from a raspiblitz node with REST Endpoints, navigate to the Mobile option in the raspiblitz menu.
+
+![Raspiblitz Menu](/assets/docs/raspiblitz/menu.png)
+ 
+Select the Zeus Android option.
+ 
+There’s no need to install Zeus for this setup, so select Continue.
+ 
+An IP2Tor Bridge is not needed. Proceed with “No Thanks”.
+ 
+Select Tor as the connect option instead of the fallback for privacy.
+ 
+All that’s needed is the Tor address, which can be gathered from the Console QRcode option.
+
+ 
+Select and copy the .onion address from one of the areas redacted in red.
+ 
