@@ -51,3 +51,29 @@ Construct the Socket entry using the .onion address with port 8080 to provide Am
 `https:// <node pubkey> @ <.onion address> :8080 `
 
 Example: `https://03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8@x26jn5xnh3rhxlrd7flvlidbhu4a5lqiaukd7l72kp5pgrfozr45ufad.onion:8080`
+
+## Fetch the Hex Macaroon
+
+The next entry to finish the Amboss setup in to give Amboss the Macaroon to manage your node. The macaroon is a set of authorization credentials that will allow Amboss to view and manage the channels on your node.
+
+### Raspiblitz Macaroon
+
+From the raspiblitz main menu, navigate to the LNDCREDS section.
+
+![Raspiblitz Menu LND Creds](/assets/docs/raspiblitz/ras-menu-LNDcreds.png)
+
+Choose EXPORT to get the Macaroons and the TLS.cert.
+
+![Raspiblitz Export LND Creds](/assets/docs/raspiblitz/ras-LNDcreds-export.png)
+
+Export the information using a Hex String.
+
+![Raspiblitz Export Hex](/assets/docs/raspiblitz/ras-LNDcreds-hex.png)
+
+Copy the admin.macaroon into the Macaroon field of Amboss.
+
+![Raspiblitz Admin Hex String](/assets/docs/raspiblitz/ras-LNDcreds-admin.png)
+
+Congratulations, you've added your first node!
+
+For next steps, consider adding two factor authentication for increased security.
