@@ -45,3 +45,9 @@ All that’s needed is the Tor address, which can be gathered from the Console Q
 Select and copy the .onion address from one of the areas redacted in red.
  
 ![Raspiblitz QR](/assets/docs/raspiblitz/ras-consoleQR-redacted.png)
+
+Construct the Socket entry using the .onion address with port 8080 to provide Amboss with the REST endpoints that it uses. Omit the spaces.
+
+`https:// <node pubkey> @ <.onion address> :8080 `
+
+Example: `https://03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8@x26jn5xnh3rhxlrd7flvlidbhu4a5lqiaukd7l72kp5pgrfozr45ufad.onion:8080`
