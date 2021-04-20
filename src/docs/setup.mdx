@@ -1,49 +1,52 @@
 ---
 title: Initial Setup
-group: Install
+group: Setup
 ---
 
 # Initial Amboss Setup
+
 Now that Amboss is installed, here are the steps to get started managing the connected nodes. Amboss uses email notifications for events, which is completely customizable.
- 
-![Amboss Login](/assets/docs/raspiblitz/AmbossLogin.png) 
- 
+
+![Amboss Login](/assets/docs/raspiblitz/AmbossLogin.png)
+
 First, enter an email address that you’d like to use for notifications. Choose a secure password that will safeguard your funds such as one generated from a password manager e.g. Bitwarden, KeePass.
- 
+
 ## Add Your First Node
+
 Amboss is built to operate with several nodes. To add your first node, enter the details needed to communicate with it:
 In the Socket field, use the following format for a node running on Tor:
 `https://<node pubkey>@<tor address from Mobile Zeus Android connect>:8080`
- 
+
 ![Add First Node](/assets/docs/raspiblitz/AddYourFirstNode.png)
- 
+
 ### Add a Raspiblitz Node
+
 To get the Tor address from a raspiblitz node with REST Endpoints, navigate to the Mobile option in the raspiblitz menu.
 
 ![Raspiblitz Menu Mobile](/assets/docs/raspiblitz/ras-menu-mobile.png)
- 
+
 Select the Zeus Android option.
 
 ![Raspiblitz Mobile Zeus](/assets/docs/raspiblitz/ras-mobile-zeus.png)
- 
+
 There’s no need to install Zeus for this setup, so select Continue.
 
 ![Raspiblitz Zeus Continue](/assets/docs/raspiblitz/ras-zeus-continue.png)
- 
+
 An IP2Tor Bridge is not needed. Proceed with “No Thanks”.
 
 ![Raspiblitz IP2Tor](/assets/docs/raspiblitz/ras-zeus-IP2Tor.png)
- 
+
 Select Tor as the connect option instead of the fallback for privacy.
 
 ![Raspiblitz Tor](/assets/docs/raspiblitz/ras-mobile-Tor.png)
- 
+
 All that’s needed is the Tor address, which can be gathered from the Console QRcode option.
 
 ![Raspiblitz Console QR](/assets/docs/raspiblitz/ras-consoleQR.png)
- 
+
 Select and copy the .onion address from one of the areas redacted in red.
- 
+
 ![Raspiblitz QR](/assets/docs/raspiblitz/ras-consoleQR-redacted.png)
 
 Construct the Socket entry using the .onion address with port 8080 to provide Amboss with the REST endpoints that it uses. Omit the spaces.
