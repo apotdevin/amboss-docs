@@ -1,0 +1,36 @@
+---
+title: Standalone
+group: Install
+---
+
+# Standalone Installation
+
+To install Amboss on a standalone server, switch to the root user.
+
+`sudo su - `
+
+Create a folder for Amboss
+
+`mkdir amboss`
+
+Change Directories into the new folder.
+
+`cd amboss`
+
+Copy the code from the Amboss repository on GitHub.
+
+`git clone https://github.com/AmbossTech/amboss-docker`
+
+Change directories again into the amboss-docker folder.
+
+`cd amboss-docker`
+
+![Cloud Download](/assets/docs/cloud/DO-PuTTY-git.png)
+
+Set the environment variables to point the standalone server to a domain that you own.
+
+`export AMBOSS_HOST="YOUROWNDOMAIN.com"`
+
+Lastly, enter the installation command and refresh your webpage. This may take a couple minutes.
+
+`. ./amboss-setup.sh -i `
