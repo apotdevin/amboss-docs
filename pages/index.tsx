@@ -9,13 +9,20 @@ const S = {
     width: 100%;
     padding: 60px 0;
   `,
+  text: styled.h1`
+    width: 100%;
+    text-align: center;
+  `,
 };
 
 const Index = () => {
   return (
-    <S.character>
-      <AmbossCharacter />
-    </S.character>
+    <>
+      <S.character>
+        <AmbossCharacter />
+      </S.character>
+      <S.text>Under Construction...</S.text>
+    </>
   );
 };
 

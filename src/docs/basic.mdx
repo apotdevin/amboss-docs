@@ -1,0 +1,59 @@
+---
+title: Basic
+group: Install
+---
+
+# Basic Docker Compose
+
+You can use this basic docker-compose file to run Amboss on your machine.
+
+```yaml
+version: '3'
+services:
+  postgres:
+    image: postgres:9.6.20
+    restart: unless-stopped
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_DB: amboss-db
+    volumes:
+      - postgres_datadir:/var/lib/postgresql/data
+
+  redis:
+    image: 'redis:6.0.9-alpine'
+    restart: unless-stopped
+    volumes:
+      - redis_datadir:/data
+
+  amboss-nest:
+    container_name: amboss-nest
+    image: 'amboss/amboss-nest:0.0.5'
+    restart: unless-stopped
+    environment:
+      REDIS_HOST: 'redis'
+      POSTGRES_HOST: 'postgres'
+      AMBOSS_HOST: 'http://localhost:3000'
+    ports:
+      - '4000:4000'
+    depends_on:
+      - redis
+      - postgres
+
+  amboss-web:
+    container_name: amboss-web
+    image: 'amboss/amboss-web:0.0.5'
+    restart: unless-stopped
+    environment:
+      SERVER_SSR_URL: 'http://amboss-nest:4000/graphql'
+      SERVER_URL: 'http://localhost:4000/graphql'
+    ports:
+      - '3000:3000'
+    depends_on:
+      - amboss-nest
+
+volumes:
+  postgres_datadir:
+  redis_datadir:
+```
+
+You can also find the file in [this repository](https://github.com/AmbossTech/amboss-compose).

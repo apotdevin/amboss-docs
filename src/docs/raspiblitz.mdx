@@ -29,11 +29,12 @@ git clone https://github.com/AmbossTech/amboss-docker
 cd amboss-docker
 ```
 
-Set environment variables. Replace amboss.local with your node’s local IP address.
+Set environment variables. Replace amboss.local with your node’s server address, which can simply be your node's local IP.
 
 ```bash
 export AMBOSS_HOST="amboss.local"
 export REVERSEPROXY_DEFAULT_HOST="$AMBOSS_HOST"
+export AMBOSSGEN_REVERSEPROXY=none
 ```
 
 Run the Setup script. (This will take several minutes)
