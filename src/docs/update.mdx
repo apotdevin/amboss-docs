@@ -3,14 +3,22 @@ title: Update
 group: Update
 ---
 
+# Update Docker Setup
 Updating Amboss is a simple process. For the Amboss docker setup, navigate to the command line and enter the following:
 
-``amboss-update.sh``
+```bash
+amboss-update.sh 
+```
+
+# Update Compose Setup
 
 For the Amboss compose setup, enter the following:
+```bash
+docker-compose pull
+docker-compose up -d --remove-orphans
+```
 
-``docker-compose pull``
-`docker-compose up -d --remove-orphans`
-
-Then, remove old images with 
-``docker image prune``.
+Then, remove old images with: 
+```bash
+docker image prune
+```
